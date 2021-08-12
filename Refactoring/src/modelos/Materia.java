@@ -7,7 +7,34 @@ public class Materia {
     private double notaInicial;
     private double notaFinal;
     private double notaTotal;
-
+    private double nexamen;
+    private double ndeberes;
+    private double nlecciones;
+    private double ntalleres;
+    public double getNexamen() {
+        return nexamen;
+    }
+    public void setNexamen(double nexamen) {
+        this.nexamen = nexamen;
+    }
+    public double getNdeberes() {
+        return ndeberes;
+    }
+    public void setNdeberes(double ndeberes) {
+        this.ndeberes = ndeberes;
+    }
+    public double getNlecciones() {
+        return nlecciones;
+    }
+    public void setNlecciones(double nlecciones) {
+        this.nlecciones = nlecciones;
+    }
+    public double getNtalleres() {
+        return ntalleres;
+    }
+    public void setNtalleres(double ntalleres) {
+        this.ntalleres = ntalleres;
+    }
     public String getCodigo() {
         return codigo;
     }
@@ -54,6 +81,17 @@ public class Materia {
             }
         }
         return notaTotal;
+    }
+    public double CalcularNota(Estudiante e, Paralelo p,Notas n){
+        double notaInicial=0;
+        for(Paralelo par:e.paralelos){
+            if(p.equals(par)){
+                double notaTeorico=(n.getNexamen()+n.getNdeberes()+n.getNlecciones())*0.80;
+                double notaPractico=(n.getNtalleres())*0.20;
+                notaInicial=notaTeorico+notaPractico;
+            }
+        }
+        return notaInicial;
     }
     
 }
