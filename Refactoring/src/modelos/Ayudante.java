@@ -4,21 +4,10 @@ import java.util.ArrayList;
 
 public class Ayudante extends Estudiante {
     public ArrayList<Paralelo> paralelos;
-    public String getMatricula() {
-        return this.getMatricula();
-    }
+    protected Estudiante est;
 
-    public void setMatricula(String matricula) {
-        this.setMatricula(matricula);
-    }
-
-    //Getters y setters se delegan en objeto estudiante para no duplicar código
-    public String getNombre() {
-        return this.getNombre();
-    }
-
-    public String getApellido() {
-        return this.getApellido();
+    public Ayudante(String matricula, String nombre, String apellido) {
+        super (matricula, nombre, apellido);
     }
 
     //Los paralelos se añaden/eliminan directamente del Arraylist de paralelos

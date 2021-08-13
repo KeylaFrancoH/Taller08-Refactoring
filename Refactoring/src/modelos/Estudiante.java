@@ -12,6 +12,13 @@ public class Estudiante{
     public String direccion;
     public String telefono;
     public ArrayList<Paralelo> paralelos;
+
+    public Estudiante(String matricula, String nombre, String apellido) {
+        this.matricula = matricula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+    
     
     //Getter y setter de Matricula
 
