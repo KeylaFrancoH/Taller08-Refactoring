@@ -82,12 +82,12 @@ public class Materia {
         }
         return notaTotal;
     }
-    public double CalcularNota(Estudiante e, Paralelo p,Notas n){
+    public double CalcularNota(Estudiante e, Paralelo p){
         double notaInicial=0;
         for(Paralelo par:e.paralelos){
             if(p.equals(par)){
-                double notaTeorico=(n.getNexamen()+n.getNdeberes()+n.getNlecciones())*0.80;
-                double notaPractico=(n.getNtalleres())*0.20;
+                double notaTeorico=(this.nexamen+this.ndeberes+this.nlecciones)*0.80;
+                double notaPractico=(this.ntalleres)*0.20;
                 notaInicial=notaTeorico+notaPractico;
             }
         }
